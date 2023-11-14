@@ -1,0 +1,23 @@
+{
+  "name": "key-converter",
+  "version": "1.0.0",
+  "description": "Convert chords from one key to another",
+  "main": "script.js",
+  "scripts": {
+    "start": "npx serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fbedussi/key-converter.git"
+  },
+  "author": "Francesco Bedussi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fbedussi/key-converter/issues"
+  },
+  "homepage": "https://github.com/fbedussi/key-converter#readme",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

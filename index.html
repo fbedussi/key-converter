@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key converter</title>
+  <link type="text/css" rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <fieldset>
+    <div>
+      Names: <label><input type="radio" name="notation" value="eng" checked />English</label>
+      <label><input type="radio" name="notation" value="ita" />Italian</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <select id="select-start-key"></select>
+    <label><input type="checkbox" id="minor" />Minor</label>
+  </fieldset>
+
+  <fieldset>
+    <select id="select-dest-key"></select>
+  </fieldset>
+
+  <table>
+    <thead>
+      <tr>
+        <th>I</th>
+        <th>II</th>
+        <th>III</th>
+        <th>IV</th>
+        <th>V</th>
+        <th>VI</th>
+        <th>VII</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="start-key"></tr>
+      <tr id="dest-key"></tr>
+    </tbody>
+  </table>
+
+  <script type="module" src="signal.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
