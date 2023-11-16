@@ -1,13 +1,5 @@
 import {notes, selectedStartKey, selectedDestKey} from './state.js'
 
-document.querySelector('#select-start-key').onChange = e => {
-  selectedStartKey.value = Number(e.target.value)
-}
-
-document.querySelector('#select-dest-key').onChange = e => {
-  selectedDestKey.value = Number(e.target.value)
-}
-
 class SelectKey extends HTMLSelectElement {
   constructor() {
     super()
@@ -24,6 +16,14 @@ class SelectKey extends HTMLSelectElement {
       "change",
       this.onChange
     );
+  }
+
+  onChange(e) {
+    if (this.id === 'select-start-key') {
+      selectedStartKey.value = Number(e.target.value)
+    } else if (this.id === 'select-dest-key') {
+      selectedDestKey.value = Number(e.target.value)
+    }
   }
 
   render() {
