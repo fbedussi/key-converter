@@ -9,7 +9,7 @@ export const selectedStartKey = createSignal(null);
 export const selectedDestKey = createSignal(null);
 
 const notesEng = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
-const notesIta = ["DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "SÌ"]
+const notesIta = ["DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "LA", "LA#", "SÌ"]
 
 export const notes = createSignal(notesEng)
 
