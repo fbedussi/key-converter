@@ -17,12 +17,12 @@
   </fieldset>
 
   <fieldset>
-    <select id="select-start-key"></select>
+    <select is="select-key" label="Choose the starting key" id="select-start-key"></select>
     <label><input type="checkbox" id="minor" />Minor</label>
   </fieldset>
 
   <fieldset>
-    <select id="select-dest-key"></select>
+    <select is="select-key" label="Choose the destination key" id="select-dest-key"></select>
   </fieldset>
 
   <table>
@@ -38,12 +38,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr id="start-key"></tr>
-      <tr id="dest-key"></tr>
+      <tr is="key-row" id="start-key"></tr>
+      <tr is="key-row" id="dest-key"></tr>
     </tbody>
   </table>
 
   <script type="module" src="signal.js"></script>
+  <script type="module" src="state.js"></script>
+  <script type="module" src="select-key.js"></script>
+  <script type="module" src="key-row.js"></script>
   <script type="module" src="script.js"></script>
 </body>
 
