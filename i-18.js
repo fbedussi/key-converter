@@ -6,9 +6,12 @@ export const t = (text) => {
   return translation ?? text
 }
 
-fetch(`/${navigator.language}.json`)
+fetch(`/${navigator.language.split('-')[0].toLowerCase()}.json`)
   .then(res => res.status === 200 && res.json())
-  .then(res => labels.value = res)
+  .then(res => {
+    document.documentElement.lang = navigator.language
+    labels.value = res
+  })
 
 customElements.define("i-18", class extends HTMLElement {
   constructor() {

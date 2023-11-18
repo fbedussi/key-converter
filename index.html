@@ -16,13 +16,13 @@
   <main class="container">
     <fieldset>
       <change-notes>
-        <i-18>Names:</i-18> <label><input type="radio" name="notation" value="eng"
-            checked /><i-18>English</i-18></label>
+        <i-18>Names:</i-18>
+        <label><input type="radio" name="notation" value="eng" checked /><i-18>English</i-18></label>
         <label><input type="radio" name="notation" value="ita" /><i-18>Italian</i-18></label>
       </change-notes>
     </fieldset>
 
-    <div class="key-selection">
+    <fieldset class="key-selection">
       <select is="select-key" label="From" key="selectedStartKey"></select>
 
       <toggle-minor>
@@ -30,7 +30,7 @@
       </toggle-minor>
 
       <select is="select-key" label="To" key="selectedDestKey"></select>
-    </div>
+    </fieldset>
 
     <table role="grid">
       <thead>
