@@ -5,14 +5,22 @@ import {notationEng} from './state.js'
 class ChangeNotes extends HTMLElement {
   constructor() {
     super()
+
+    this.ita = this.querySelector('input[value="ita"]')
+    this.eng = this.querySelector('input[value="eng"]')
   }
 
   connectedCallback() {
-    this.querySelector('input[value="eng"]')?.addEventListener('change', e => {      
+    if (navigator.language.split('-')[0].toLowerCase() === 'it') {
+      // @ts-ignore
+      this.ita.checked = true
+      notationEng.value = false
+    }
+    this.eng?.addEventListener('change', e => {      
       const checked = e.target && 'checked' in e.target && e.target.checked 
       notationEng.value = checked
     })
-    this.querySelector('input[value="ita"]')?.addEventListener('change', e => {
+    this.ita?.addEventListener('change', e => {
       const checked = e.target && 'checked' in e.target && e.target.checked 
       notationEng.value = !checked
     })

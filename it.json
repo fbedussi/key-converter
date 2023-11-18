@@ -3,6 +3,8 @@
   "English": "Anglosassoni",
   "Italian": "Italiani",
   "Minor": "Minore",
-  "Starting key": "Tonalità di partenza",
-  "Destination key": "Tonalità di arrivo"
+  "From": "Da",
+  "To": "A",
+  "Key converter": "Converti Tonalità",
+  "Grade": "Grado"
 }

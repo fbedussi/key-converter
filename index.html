@@ -22,32 +22,60 @@
       </change-notes>
     </fieldset>
 
-    <fieldset>
-      <select is="select-key" label="Starting key" data-key="selectedStartKey"></select>
+    <div class="key-selection">
+      <select is="select-key" label="From" key="selectedStartKey"></select>
+
       <toggle-minor>
         <label><input type="checkbox" /><i-18>Minor</i-18></label>
       </toggle-minor>
-    </fieldset>
 
-    <fieldset>
-      <select is="select-key" label="Destination key" data-key="selectedDestKey"></select>
-    </fieldset>
+      <select is="select-key" label="To" key="selectedDestKey"></select>
+    </div>
 
     <table role="grid">
       <thead>
         <tr>
-          <th>I</th>
-          <th>II</th>
-          <th>III</th>
-          <th>IV</th>
-          <th>V</th>
-          <th>VI</th>
-          <th>VII</th>
+          <th><i-18>Grade</i-18></th>
+          <th><i-18>From</i-18></th>
+          <th><i-18>To</i-18></th>
         </tr>
       </thead>
       <tbody>
-        <tr is="key-row" data-key="selectedStartKey"></tr>
-        <tr is="key-row" data-key="selectedDestKey"></tr>
+        <tr>
+          <td>I</td>
+          <td is="key-cell" key="selectedStartKey" index="0">&nbsp;</td>
+          <td is="key-cell" key="selectedDestKey" index="0">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>II</td>
+          <td is="key-cell" key="selectedStartKey" index="1">&nbsp;</td>
+          <td is="key-cell" key="selectedDestKey" index="1">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>III</td>
+          <td is="key-cell" key="selectedStartKey" index="2">&nbsp;</td>
+          <td is="key-cell" key="selectedDestKey" index="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>IV</td>
+          <td is="key-cell" key="selectedStartKey" index="3">&nbsp;</td>
+          <td is="key-cell" key="selectedDestKey" index="3">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>V</td>
+          <td is="key-cell" key="selectedStartKey" index="4">&nbsp;</td>
+          <td is="key-cell" key="selectedDestKey" index="4">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>VI</td>
+          <td is="key-cell" key="selectedStartKey" index="5">&nbsp;</td>
+          <td is="key-cell" key="selectedDestKey" index="5">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>VII</td>
+          <td is="key-cell" key="selectedStartKey" index="6">&nbsp;</td>
+          <td is="key-cell" key="selectedDestKey" index="6">&nbsp;</td>
+        </tr>
       </tbody>
     </table>
     <script src="//unpkg.com/@ungap/custom-elements"></script>
@@ -59,7 +87,7 @@
   <script type="module" src="change-notes.js"></script>
   <script type="module" src="toggle-minor.js"></script>
   <script type="module" src="select-key.js"></script>
-  <script type="module" src="key-row.js"></script>
+  <script type="module" src="key-cell.js"></script>
 </body>
 
 </html>

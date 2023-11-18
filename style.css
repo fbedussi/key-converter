@@ -2,10 +2,34 @@ body {
   font-family: sans-serif;
 }
 
-header {
+body > header {
   background-color: var(--primary);
+  --block-spacing-vertical: calc(var(--spacing) * 2);
 }
 
 h1 {
   color: white;
+  margin-bottom: 0;
+}
+
+change-notes,
+.key-selection {
+  display: flex;
+  gap: 1rem;
+}
+
+.key-selection {
+  justify-content: space-between;
+}
+
+toggle-minor {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing);
+  
+  label {
+    display: flex;
+    width: max-content;
+    align-items: center;
+  }
 }

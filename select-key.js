@@ -13,7 +13,7 @@ class SelectKey extends HTMLSelectElement {
     super()
 
     this.label = this.getAttribute('label')
-    this.key = key[this.dataset.key]
+    this.key = key[this.getAttribute('key')]
   }
 
   connectedCallback() {
@@ -32,7 +32,7 @@ class SelectKey extends HTMLSelectElement {
     this.innerHTML = ''
 
     const header = document.createElement("option");
-    header.innerText = t(this.label) || '';
+    header.innerHTML = `<i-18>${this.label || ''}</i-18>`
     header.disabled = true;
     header.selected = true;
     this.appendChild(header);

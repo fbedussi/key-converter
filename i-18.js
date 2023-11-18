@@ -10,7 +10,7 @@ fetch(`/${navigator.language}.json`)
   .then(res => res.status === 200 && res.json())
   .then(res => labels.value = res)
 
-customElements.define("i-18", class KeyRow extends HTMLElement {
+customElements.define("i-18", class extends HTMLElement {
   constructor() {
     super()
   }
