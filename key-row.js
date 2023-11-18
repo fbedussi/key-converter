@@ -1,20 +1,23 @@
+//@ts-check
+
 import {notes, selectedStartKey, selectedDestKey, modes} from './state.js'
+
+const key = {
+  selectedStartKey,
+  selectedDestKey
+}
 
 class KeyRow extends HTMLTableRowElement {
   constructor() {
     super()
 
-    if (this.id === 'start-key') {
-      this.selectedKey = selectedStartKey
-    } else if (this.id === 'dest-key') {
-      this.selectedKey = selectedDestKey
-    }
+    this.selectedKey = key[this.dataset.key]
   }
 
   connectedCallback() {
     this.render()
 
-    this.selectedKey.subscribe(this.render.bind(this))
+    this.selectedKey?.subscribe(this.render.bind(this))
 
     modes.subscribe(this.render.bind(this))
     
@@ -22,12 +25,12 @@ class KeyRow extends HTMLTableRowElement {
   }
 
   render() {
-    if (this.selectedKey.value === null) {
+    if (this.selectedKey?.value === null) {
       return
     }
     
     this.innerHTML = "";
-    const index = this.selectedKey.value;
+    const index = this.selectedKey?.value;
     const repeatedNotes = notes.value.concat(notes.value);
     const keyNotes = [
       repeatedNotes[index],

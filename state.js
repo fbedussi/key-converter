@@ -1,3 +1,5 @@
+//@ts-check
+
 import { createSignal } from './signal.js';
 
 export const notationEng = createSignal(true)
@@ -25,3 +27,5 @@ export const modes = createSignal(majorModes)
 minor.subscribe(minor => {
   modes.value = minor ? minorModes : majorModes
 })
+
+export const labels = createSignal()

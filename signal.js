@@ -1,3 +1,5 @@
+//@ts-check
+
 export function createSignal(initialValue) {
   let _value = initialValue;
   let subscribers = [];
