@@ -7,7 +7,8 @@ const key = {
   selectedDestKey
 }
 
-customElements.define("key-cell",
+customElements.define(
+  "key-cell",
   class extends HTMLTableCellElement {
     constructor() {
       super()
@@ -46,6 +47,7 @@ customElements.define("key-cell",
       this.innerText = `${keyNotes[this.index]}${modes.value[this.index]}`
     }
   },
-  {extends: "td"})
+  {extends: "td"}
+)
 
 

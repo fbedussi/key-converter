@@ -13,21 +13,24 @@ fetch(`/${navigator.language.split('-')[0].toLowerCase()}.json`)
     labels.value = res
   })
 
-customElements.define("i-18", class extends HTMLElement {
-  constructor() {
-    super()
-  }
-
-  connectedCallback() {
-    if (labels.value) {
-      this.render()
+customElements.define(
+  "i-18",
+  class extends HTMLElement {
+    constructor() {
+      super()
     }
-    labels.subscribe(this.render.bind(this))
-  }
 
-  render() {
-    this.innerText = t(this.innerText)
+    connectedCallback() {
+      if (labels.value) {
+        this.render()
+      }
+      labels.subscribe(this.render.bind(this))
+    }
+
+    render() {
+      this.innerText = t(this.innerText)
+    }
   }
-})
+)
 
 
