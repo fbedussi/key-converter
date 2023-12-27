@@ -1,5 +1,6 @@
 //@ts-check
 
+import {subscribeSignals} from './signal.js'
 import {notes, selectedStartKey, selectedDestKey, modes} from './state.js'
 
 const key = {
@@ -18,20 +19,10 @@ customElements.define(
     }
 
     connectedCallback() {
-      this.render()
-
-      this.selectedKey?.subscribe(this.render.bind(this))
-
-      modes.subscribe(this.render.bind(this))
-
-      notes.subscribe(this.render.bind(this))
+      subscribeSignals(this)
     }
 
     render() {
-      if (this.selectedKey?.value === null) {
-        return
-      }
-
       const index = this.selectedKey?.value;
       const repeatedNotes = notes.value.concat(notes.value);
       const keyNotes = [
@@ -44,7 +35,13 @@ customElements.define(
         repeatedNotes[index + 11]
       ];
 
-      this.innerText = `${keyNotes[this.index]}${modes.value[this.index]}`
+      const text = `${keyNotes[this.index]}${modes.value[this.index]}`
+
+      if (this.selectedKey?.value === null) {
+        return
+      }
+
+      this.innerText = text
     }
   },
   {extends: "td"}

@@ -1,5 +1,6 @@
 //@ts-check
 
+import {subscribeSignals} from './signal.js'
 import {notes, selectedStartKey, selectedDestKey} from './state.js'
 
 const key = {
@@ -18,10 +19,7 @@ customElements.define(
     }
 
     connectedCallback() {
-      this.render()
-
-      notes.subscribe(this.render.bind(this))
-
+      subscribeSignals(this)
 
       this.addEventListener('change', (e) => {
         // @ts-ignore
