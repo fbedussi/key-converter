@@ -4,7 +4,7 @@ import {notationEng} from './state.js'
 
 customElements.define(
   "change-notes",
-  class ChangeNotes extends HTMLElement {
+  class ChangeNotes extends HTMLFieldSetElement {
     constructor() {
       super()
 
@@ -18,14 +18,11 @@ customElements.define(
         this.ita.checked = true
         notationEng.value = false
       }
-      this.eng?.addEventListener('change', e => {
-        const checked = e.target && 'checked' in e.target && e.target.checked
-        notationEng.value = checked
-      })
-      this.ita?.addEventListener('change', e => {
-        const checked = e.target && 'checked' in e.target && e.target.checked
-        notationEng.value = !checked
+      this.addEventListener('change', e => {
+        // @ts-ignore
+        notationEng.value = e.target.checked && e.target.value === 'eng'
       })
     }
-  }
+  },
+  {extends: "fieldset"}
 )

@@ -12,7 +12,7 @@ h1 {
   margin-bottom: 0;
 }
 
-change-notes {
+[is="change-notes"] {
   display: flex;
   gap: 1rem;
 }
